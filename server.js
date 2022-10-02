@@ -1,22 +1,18 @@
 // DEPENDENCIES
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const apiRoute = require("./routes/apiRoutes");
+const htmlRoute = require("./routes/htmlRoutes");
 
-// creating an "express" server
+// Tells node that we are creating an "express" server
 const app = express();
+
+// Sets an initial port. 
+const PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to serve static files and handle data parsing
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-
-
-
-
-
-
-
 
 
 
