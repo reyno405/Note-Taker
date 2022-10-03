@@ -2,10 +2,7 @@
 const router = require("express").Router();
 const fs = require("fs");
 
-// API GET Request
 // code handles refresh events when a user loads/reloads, saves, and deletes a note.
-// reads data from db.json and returns it to be displayed.
-
 router.get("/notes", function (req, res) {
 
     // Use fs.readFile to access data in db.json
