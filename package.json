@@ -1,6 +1,7 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
+  "description": "AS A small business owner",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,7 +19,8 @@
   },
   "homepage": "https://github.com/reyno405/Note-Taker#readme",
   "dependencies": {
-    "express": "^4.18.1"
-  },
-  "description": ""
+    "express": "^4.17.1",
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13"
+  }
 }
