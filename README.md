@@ -44,6 +44,8 @@ If running app locally from terminal you will need to run the following commands
 
 npm i
 
+npm install uuidv4
+
 node server.js
 
 The app will be rendered to:
