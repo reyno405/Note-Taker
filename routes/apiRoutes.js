@@ -1,31 +1,27 @@
-// Dependencies
 const router = require('express').Router();
+const db = require('../db/db.json'); 
+const fs = require('fs');
 
-const saveData = require('../db/saveData');
+const { v4: uuidv4 } = require('uuid');
 
-// GET request
-router.get('/notes', function (req, res) {
-    saveData
-        .retrieveNotes()
-        .then(notes => res.json(notes))
-        .catch(err => res.status(500).json(err));
+router.get('/notes', (req, res) => {
+    res.json(db);
 });
 
-// POST request
 router.post('/notes', (req, res) => {
-    saveData
-        .addNote(req.body)
-        .then((note) => res.json(note))
-        .catch(err => res.status(500).json(err));
+    req.body.id = uuidv4();
+    db.push(req.body);
+    fs.writeFile('./db/db.json', JSON.stringify(db, null, 4), function (err) {
+        if (err) console.log("Error writing file:", err);
+        res.json(db);
+    })
 });
 
-// Bonus - DELETE request
-router.delete('/notes/:id', function (req, res) {
-    saveData
-        .deleteNote(req.params.id)
-        .then(() => res.json({ ok: true }))
-        .catch(err => res.status(500).json(err));
-});
-
+router.delete('/notes/:id', (req, res) => {
+    const DBid = req.params.id;
+    db.splice(DBid, 1);
+    fs.writeFileSync('./db/db.json', JSON.stringify(db, null, 4));
+    res.json(req.body);
+})
 
 module.exports = router;

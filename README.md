@@ -1,4 +1,7 @@
+# Notes-Taker 
+
 # User Story
+
 
 AS A small business owner
 
@@ -6,8 +9,9 @@ I WANT to be able to write and save notes
 
 SO THAT I can organize my thoughts and keep track of tasks I need to complete
 
- 
- # Acceptance Criteria
+
+# Acceptance Criteria
+
 
 GIVEN a note-taking application
 
@@ -38,7 +42,6 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 
 # Installation
 
-Run the app with heroku using the following link:
 
 If running app locally from terminal you will need to run the following commands to get started:
 
@@ -50,9 +53,4 @@ node server.js
 
 The app will be rendered to:
 
-http://localhost:8080/
-
-
-# Video
-
-https://drive.google.com/file/d/1U6MNEvAlyWWsNkeXwdOQIqmUwsf4vP-0/view
+http://localhost:3001
